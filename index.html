@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f2e9">
+    <title>Little Codebreaker — A guessing game</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script type="module" src="assets/js/game.js"></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#" aria-label="Little Codebreaker home">
+          <span class="wordmark-mark" aria-hidden="true">✳</span>
+          <span>little codebreaker</span>
+        </a>
+        <span class="edition">THE ICON EDITION</span>
+      </header>
+
+      <section class="intro" aria-labelledby="game-title">
+        <p class="eyebrow">A game of curious clues</p>
+        <h1 id="game-title">Crack the<br><span>secret code.</span></h1>
+        <p class="intro-copy">A hidden sequence of icons is waiting to be found.<br class="desktop-break">
+          Can you figure it out in eight tries?</p>
+      </section>
+
+      <section class="play-area" aria-label="Codebreaker game">
+        <div class="board-heading">
+          <div>
+            <p class="section-label">YOUR DECODE BOARD</p>
+            <p class="turn-count" id="turn-count">Attempt 1 <span>of 8</span></p>
+          </div>
+          <div class="secret-code" id="secret-code" aria-label="Secret code, hidden">
+            <span class="secret-slot" aria-hidden="true">?</span>
+            <span class="secret-slot" aria-hidden="true">?</span>
+            <span class="secret-slot" aria-hidden="true">?</span>
+            <span class="secret-slot" aria-hidden="true">?</span>
+            <span class="secret-label">THE SECRET</span>
+          </div>
+        </div>
+
+        <div class="board" id="board" aria-label="Eight guess rows"></div>
+
+        <div class="controls">
+          <div class="challenge-picker">
+            <label class="section-label" for="challenge-size">CHOOSE YOUR CHALLENGE</label>
+            <select id="challenge-size" aria-label="Number of different icons to choose from">
+              <option value="4" selected>4 icons · Easiest</option>
+              <option value="5">5 icons · Easy</option>
+              <option value="6">6 icons · Relaxed</option>
+              <option value="7">7 icons · Tricky</option>
+              <option value="8">8 icons · Hard</option>
+              <option value="9">9 icons · Very hard</option>
+              <option value="10">10 icons · Toughest</option>
+            </select>
+            <span class="challenge-hint">More icons to choose from makes the code harder to crack.</span>
+          </div>
+          <div class="symbol-picker">
+            <div class="picker-heading">
+              <p class="section-label">PICK YOUR ICONS</p>
+              <span class="keyboard-hint" id="keyboard-hint">or use keys 1–4</span>
+            </div>
+            <div class="symbol-tray" id="symbol-tray" aria-label="Available icons"></div>
+          </div>
+
+          <div class="action-row">
+            <p class="selection-hint" id="selection-hint">Choose an icon to fill your first spot.</p>
+            <button class="submit-button" id="submit-guess" type="button" disabled>
+              Check my guess <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <p class="game-message" id="game-message" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <aside class="how-to-play" aria-labelledby="how-title">
+        <div class="how-icon" aria-hidden="true">?</div>
+        <div>
+          <h2 id="how-title">How to play</h2>
+          <p>Fill all four spots with different icons, then check your guess. A <span class="clue-dot exact"></span> clue means the icon and its spot are right. A <span class="clue-dot misplaced"></span> clue means the icon is right, but in another spot. Clues don’t reveal which icons they match. Choose a tougher challenge for more icons to consider.</p>
+        </div>
+        <button class="new-game-button" id="new-game" type="button">New game <span aria-hidden="true">↻</span></button>
+      </aside>
+
+      <footer class="footer">
+        <span>MADE FOR THE JOY OF FIGURING IT OUT</span>
+        <span>FOUR UNIQUE ICONS · EIGHT GUESSES · ONE SECRET</span>
+      </footer>
+    </main>
+  </body>
+</html>
